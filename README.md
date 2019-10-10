@@ -1,0 +1,2 @@
+# TeluskoProject
+ Python Django Project
