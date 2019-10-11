@@ -9,4 +9,14 @@ def index(request):
     dest1.desc = 'The City That Never Sleep'
     dest1.price = 700
 
-    return render(request, 'index.html', {'dest1' : dest1})
+    dest2 = Destination()
+    dest2.name = 'Peshawar'
+    dest2.desc = 'The City of Beuty'
+    dest2.price = 850
+
+    dest3 = Destination()
+    dest3.name = 'Islamabad'
+    dest3.desc = 'The City of Silence'
+    dest3.price = 600
+
+    return render(request, 'index.html', {'obj' : dest1, 'obj2' : dest2, 'obj3' : dest3})
