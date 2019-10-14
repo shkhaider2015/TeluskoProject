@@ -1,4 +1,5 @@
 {% load static %}
+{% static "images" as baseURL %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -249,77 +250,24 @@
 					<div class="destinations_container item_grid">
 
 						<!-- Destination -->
+						{% for dest in dests %}
 						<div class="destination item">
 							<div class="destination_image">
-								<img src="{% static 'images/destination_1.jpg' %}" alt="">
+								<img src="{{baseURL}}/{{dest.image}}" alt="image">
+								{% if dest.name == "Peshawar" %}
 								<div class="spec_offer text-center"><a href="#">Special Offer</a></div>
+								{% endif %}
 							</div>
 							<div class="destination_content">
-								<div class="destination_title"><a href="destinations.html">{{obj.name}}</a></div>
-								<div class="destination_subtitle"><p>{{obj.desc}}</p></div>
-								<div class="destination_price">From ${{obj.price}}</div>
+								<div class="destination_title"><a href="destinations.html">{{dest.name}}</a></div>
+								<div class="destination_subtitle"><p>{{dest.desc}}</p></div>
+								<div class="destination_price">From ${{dest.price}}</div>
 							</div>
 						</div>
+						{% endfor %}
 
-						<!-- Destination -->
-						<div class="destination item">
-							<div class="destination_image">
-								<img src="{% static 'images/destination_2.jpg' %}" alt="">
-							</div>
-							<div class="destination_content">
-								<div class="destination_title"><a href="destinations.html">{{obj2.name}}</a></div>
-								<div class="destination_subtitle"><p>{{obj2.desc}}</p></div>
-								<div class="destination_price">From ${{obj2.price}}</div>
-							</div>
-						</div>
 
-						<!-- Destination -->
-						<div class="destination item">
-							<div class="destination_image">
-								<img src="{% static 'images/destination_3.jpg' %}" alt="">
-							</div>
-							<div class="destination_content">
-								<div class="destination_title"><a href="destinations.html">{{obj3.name}}</a></div>
-								<div class="destination_subtitle"><p>{{obj3.desc}}</p></div>
-								<div class="destination_price">From ${{obj3.price}}</div>
-							</div>
-						</div>
 
-						<!-- Destination -->
-						<div class="destination item">
-							<div class="destination_image">
-								<img src="{% static 'images/destination_4.jpg' %}" alt="">
-							</div>
-							<div class="destination_content">
-								<div class="destination_title"><a href="destinations.html">Paris</a></div>
-								<div class="destination_subtitle"><p>Nulla pretium tincidunt felis, nec.</p></div>
-								<div class="destination_price">From $679</div>
-							</div>
-						</div>
-
-						<!-- Destination -->
-						<div class="destination item">
-							<div class="destination_image">
-								<img src="{% static 'images/destination_5.jpg' %}" alt="">
-							</div>
-							<div class="destination_content">
-								<div class="destination_title"><a href="destinations.html">Phi Phi Island</a></div>
-								<div class="destination_subtitle"><p>Nulla pretium tincidunt felis, nec.</p></div>
-								<div class="destination_price">From $679</div>
-							</div>
-						</div>
-
-						<!-- Destination -->
-						<div class="destination item">
-							<div class="destination_image">
-								<img src="{% static 'images/destination_6.jpg' %}" alt="">
-							</div>
-							<div class="destination_content">
-								<div class="destination_title"><a href="destinations.html">Mykonos</a></div>
-								<div class="destination_subtitle"><p>Nulla pretium tincidunt felis, nec.</p></div>
-								<div class="destination_price">From $679</div>
-							</div>
-						</div>
 
 					</div>
 				</div>
