@@ -253,7 +253,7 @@
 						{% for dest in dests %}
 						<div class="destination item">
 							<div class="destination_image">
-								<img src="{{baseURL}}/{{dest.image}}" alt="image">
+								<img src="{{dest.image.url}}" alt="image">
 								{% if dest.name == "Peshawar" %}
 								<div class="spec_offer text-center"><a href="#">Special Offer</a></div>
 								{% endif %}
