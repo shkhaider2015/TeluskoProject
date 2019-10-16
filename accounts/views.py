@@ -17,10 +17,12 @@ def register(request):
             print('Password is matching')
             if User.objects.filter(username=user_name).exist():
                 print('username is taken')
+                return redirect('register')
                 messages.info(request, 'Username taken')
             elif User.objects.filter(email=email):
                 messages.info(request, 'Email taken')
                 print('email is taken')
+                return redirect('register')
             else:
                 user = User.objects.create_user(first_name=first_name, last_name=last_name, username=user_name, email=email, password=password)
                 user.save()
@@ -28,6 +30,8 @@ def register(request):
                 return redirect('/')
         else:
             print("Password is not matching")
+            messages.info(request, 'Password is not matching')
+            return redirect('register')
 
 
         
