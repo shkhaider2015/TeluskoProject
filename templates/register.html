@@ -24,6 +24,11 @@
                     <form action='register' method="POST" id="signup-form" class="signup-form">
                         {% csrf_token %}
                         <h2 class="form-title">Create account</h2>
+                        {% for message in messages %}
+                            <h4>
+                             {{message}}
+                            </h4>
+                        {% endfor %}
                         <div class="form-group">
                             <input type="text" class="form-input" name="firstname" id="firstname" placeholder="First Name"/>
                         </div>
@@ -51,11 +56,7 @@
                             <input type="submit" name="submit" id="submit" class="form-submit" value="Sign up"/>
                         </div>
                     </form>
-                    {% for message in messages %}
-                    <p class="loginhere">
-                            {{message}}
-                        </p>
-                    {% endfor %}
+                    
                     <p class="loginhere">
                         Have already an account ? <a href="#" class="loginhere-link">Login here</a>
                     </p>

@@ -15,11 +15,11 @@ def register(request):
 
         if password == password2:
             print('Password is matching')
-            if User.objects.filter(username=user_name).exist():
+            if User.objects.filter(username=user_name).exists():
                 print('username is taken')
-                return redirect('register')
                 messages.info(request, 'Username taken')
-            elif User.objects.filter(email=email):
+                return redirect('register')
+            elif User.objects.filter(email=email).exists():
                 messages.info(request, 'Email taken')
                 print('email is taken')
                 return redirect('register')
