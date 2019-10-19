@@ -8,6 +8,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="description" content="Travello template project">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css?family=Indie+Flower&display=swap" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="{% static 'styles/bootstrap4/bootstrap.min.css' %}">
 <link href="{% static 'plugins/font-awesome-4.7.0/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
 <link rel="stylesheet" type="text/css" href="{% static 'plugins/OwlCarousel2-2.2.1/owl.carousel.css' %}">
@@ -33,11 +34,16 @@
 								<ul class="d-flex flex-row align-items-start justify-content-start">
 									<li class="active"><a href="index.html">Home</a></li>
 									<li><a href="contact.html">Contact</a></li>
+									{% if user.is_authenticated %}
+									<li><a href="accounts/logout">Logout</a></li>
+									<li> <font font-family="'Indie Flower', cursive"> Hello, {{user.first_name}} </font> </li>
+									{% else %}
 									<li><a href="accounts/login">Login</a></li>
 									<li><a href="accounts/register">Register</a></li>
+									{% endif %}
 								</ul>
 							</nav>
-							<div class="header_phone ml-auto">Call us: 00-56 445 678 33</div>
+							<div class="header_phone ml-auto">Call us: 92-34 600 278 52</div>
 
 							<!-- Hamburger -->
 
